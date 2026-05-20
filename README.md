@@ -266,7 +266,7 @@ Este programa implementa los algoritmos de planificación de disco:
 - SCAN
 - C-SCAN
 
-Además, genera 1000 solicitudes aleatorias de cilindros y calcula el movimiento total del cabezal del disco para cada algoritmo. :contentReference[oaicite:0]{index=0}
+Además, genera 1000 solicitudes aleatorias de cilindros y calcula el movimiento total del cabezal del disco para cada algoritmo. 
 
 ## Compilar
 
@@ -308,7 +308,7 @@ Este programa implementa nuevamente los algoritmos FCFS, SCAN y C-SCAN, pero ade
 - El recorrido del cabezal.
 - Comparaciones de rendimiento entre algoritmos.
 
-Utiliza la librería `matplotlib` para mostrar las gráficas. :contentReference[oaicite:1]{index=1}
+Utiliza la librería `matplotlib` para mostrar las gráficas.
 
 ## Ejecutar
 
