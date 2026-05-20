@@ -4,3 +4,155 @@
 La carpeta Parte1 corresponde a la primera parte del assignment III donde estará la solución de cada punto cada uno en un archivo .cpp separado.
 
 Por otra parte la carpeta Parte2 contiene la implementacion correspondiente de lo que se solicitaba para la segunda parte de este trabajo.
+
+
+# Parte 1 - Programas en C++
+
+La carpeta `Parte1` contiene tres programas desarrollados en C++ relacionados con el uso de punteros, arreglos y memoria dinámica.
+
+---
+
+# Requisitos
+
+Antes de ejecutar los programas, asegúrese de tener instalado:
+
+- g++
+- Un compilador compatible con C++11 o superior
+
+Para verificar la instalación:
+
+```bash
+g++ --version
+```
+
+---
+
+# Estructura de la carpeta
+
+```text
+Parte1/
+│
+├── punto1.cpp
+├── punto3.cpp
+└── punto4.cpp
+```
+
+---
+
+# Cómo ejecutar los programas
+
+Primero ingrese a la carpeta `Parte1`:
+
+```bash
+cd Parte1
+```
+
+---
+
+# Ejecutar punto1.cpp
+
+Este programa muestra cómo utilizar punteros para modificar el valor de una variable mediante acceso indirecto.
+
+## Compilar
+
+```bash
+g++ punto1.cpp -o punto1
+```
+
+## Ejecutar
+
+### Linux / Mac
+
+```bash
+./punto1
+```
+
+### Windows
+
+```bash
+punto1.exe
+```
+
+---
+
+# Ejecutar punto3.cpp
+
+Este programa utiliza punteros para recorrer y modificar un arreglo, mostrando además las direcciones de memoria de cada elemento.
+
+## Compilar
+
+```bash
+g++ punto3.cpp -o punto3
+```
+
+## Ejecutar
+
+### Linux / Mac
+
+```bash
+./punto3
+```
+
+### Windows
+
+```bash
+punto3.exe
+```
+
+---
+
+# Ejecutar punto4.cpp
+
+Este programa implementa memoria dinámica para crear una matriz bidimensional usando punteros dobles (`int**`).
+
+## Compilar
+
+```bash
+g++ punto4.cpp -o punto4
+```
+
+## Ejecutar
+
+### Linux / Mac
+
+```bash
+./punto4
+```
+
+### Windows
+
+```bash
+punto4.exe
+```
+
+---
+
+# Explicación General
+
+## punto1.cpp
+
+- Declara una variable entera.
+- Crea un puntero hacia dicha variable.
+- Modifica el valor usando desreferenciación.
+- Muestra direcciones de memoria.
+
+---
+
+## punto3.cpp
+
+- Declara un arreglo de enteros.
+- Recorre el arreglo usando punteros.
+- Modifica sus valores.
+- Imprime contenido y direcciones de memoria.
+
+---
+
+## punto4.cpp
+
+- Solicita filas y columnas.
+- Reserva memoria dinámicamente.
+- Permite ingresar valores a la matriz.
+- Imprime la matriz y sus direcciones de memoria.
+- Libera correctamente la memoria usando `delete[]`.
+
+---
