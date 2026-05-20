@@ -8,7 +8,7 @@ Por otra parte la carpeta Parte2 contiene la implementacion correspondiente de l
 
 # Parte 1 - Programas en C++
 
-La carpeta `Parte1` contiene tres programas desarrollados en C++ relacionados con el uso de punteros, arreglos y memoria dinámica.
+La carpeta `Parte1` contiene programas desarrollados en C++ relacionados con el uso de punteros, referencias, arreglos y memoria dinámica.
 
 ---
 
@@ -33,6 +33,7 @@ g++ --version
 Parte1/
 │
 ├── punto1.cpp
+├── punto2.cpp
 ├── punto3.cpp
 └── punto4.cpp
 ```
@@ -71,6 +72,32 @@ g++ punto1.cpp -o punto1
 
 ```bash
 punto1.exe
+```
+
+---
+
+# Ejecutar punto2.cpp
+
+Este programa muestra la diferencia entre el uso de punteros y referencias en C++, modificando el valor de una variable y mostrando sus direcciones de memoria. :contentReference[oaicite:0]{index=0}
+
+## Compilar
+
+```bash
+g++ punto2.cpp -o punto2
+```
+
+## Ejecutar
+
+### Linux / Mac
+
+```bash
+./punto2
+```
+
+### Windows
+
+```bash
+punto2.exe
 ```
 
 ---
@@ -135,6 +162,15 @@ punto4.exe
 - Crea un puntero hacia dicha variable.
 - Modifica el valor usando desreferenciación.
 - Muestra direcciones de memoria.
+
+---
+
+## punto2.cpp
+
+- Declara una variable entera.
+- Usa un puntero y una referencia hacia la misma variable.
+- Modifica el valor usando ambos métodos.
+- Muestra las direcciones de memoria correspondientes.
 
 ---
 
