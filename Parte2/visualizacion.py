@@ -11,19 +11,15 @@ with open("results.csv", "r") as file:
 
     for row in reader:
 
-        name = row[0]
+        algorithm = row[0]
 
-        values = []
+        cylinder = int(row[2])
 
-        i = 1
+        if algorithm not in orders:
 
-        while i < len(row):
+            orders[algorithm] = []
 
-            values.append(int(row[i]))
-
-            i += 1
-
-        orders[name] = values
+        orders[algorithm].append(cylinder)
 
 
 def total_movement(order):
@@ -41,7 +37,8 @@ def total_movement(order):
     return total
 
 
-def plot_head_movement(order, title):
+def plot_head_movement(order,
+                       title):
 
     x = []
 
@@ -55,30 +52,44 @@ def plot_head_movement(order, title):
 
     plt.figure()
 
-    plt.plot(x, order, marker='o')
+    plt.plot(x,
+             order,
+             marker='o')
 
     plt.title(title)
 
-    plt.xlabel("Order of serviced requests")
+    plt.xlabel(
+        "Order of serviced requests"
+    )
 
-    plt.ylabel("Cylinder number")
+    plt.ylabel(
+        "Cylinder number"
+    )
 
     plt.grid(True)
 
     plt.show()
 
 
-def plot_comparison(names, movements):
+def plot_comparison(names,
+                    movements):
 
     plt.figure()
 
-    plt.bar(names, movements)
+    plt.bar(names,
+            movements)
 
-    plt.title("Performance Comparison")
+    plt.title(
+        "Performance Comparison"
+    )
 
-    plt.xlabel("Disk Scheduling Algorithm")
+    plt.xlabel(
+        "Disk Scheduling Algorithm"
+    )
 
-    plt.ylabel("Total Head Movement")
+    plt.ylabel(
+        "Total Head Movement"
+    )
 
     plt.grid(axis='y')
 
@@ -99,16 +110,6 @@ scan_movement = total_movement(scan_order)
 cscan_movement = total_movement(cscan_order)
 
 
-print("FCFS total movement:",
-      fcfs_movement)
-
-print("SCAN total movement:",
-      scan_movement)
-
-print("C-SCAN total movement:",
-      cscan_movement)
-
-
 plot_head_movement(
     fcfs_order,
     "FCFS Head Movement"
@@ -125,7 +126,11 @@ plot_head_movement(
 )
 
 
-names = ["FCFS", "SCAN", "C-SCAN"]
+names = [
+    "FCFS",
+    "SCAN",
+    "C-SCAN"
+]
 
 movements = [
     fcfs_movement,
@@ -133,4 +138,7 @@ movements = [
     cscan_movement
 ]
 
-plot_comparison(names, movements)
+plot_comparison(
+    names,
+    movements
+)
