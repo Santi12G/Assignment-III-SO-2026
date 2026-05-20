@@ -193,19 +193,26 @@ punto4.exe
 
 ---
 
----
-
 # Parte 2 - Algoritmos de Planificación de Disco
 
-La carpeta `Parte2` contiene programas relacionados con algoritmos de planificación de disco y visualización de resultados.
+La carpeta `Parte2` contiene:
 
-## Estructura de la carpeta
+- Un programa en C++ que implementa los algoritmos:
+  - FCFS
+  - SCAN
+  - C-SCAN
+- Un programa en Python para visualizar gráficamente los resultados generados por el programa en C++.
+
+---
+
+# Estructura de la carpeta
 
 ```text
 Parte2/
 │
-├── parte2,2.cpp
-└── visualizacion.py
+├── parte2.cpp
+├── visualizacion.py
+└── results.csv
 ```
 
 ---
@@ -234,7 +241,7 @@ Instalar:
 - Python 3
 - matplotlib
 
-Verificar Python:
+Verificar instalación de Python:
 
 ```bash
 python --version
@@ -258,25 +265,28 @@ cd Parte2
 
 ---
 
-# Ejecutar parte2,2.cpp
+# 1. Ejecutar parte2.cpp
 
-Este programa implementa los algoritmos de planificación de disco:
+Este programa:
 
-- FCFS
-- SCAN
-- C-SCAN
+- Genera 1000 solicitudes aleatorias de disco.
+- Ejecuta los algoritmos FCFS, SCAN y C-SCAN.
+- Calcula el movimiento total del cabezal.
+- Exporta los resultados al archivo `results.csv`.
 
-Además, genera 1000 solicitudes aleatorias de cilindros y calcula el movimiento total del cabezal del disco para cada algoritmo. 
+---
 
 ## Compilar
 
 ```bash
-g++ "parte2,2.cpp" -o parte2
+g++ parte2.cpp -o parte2
 ```
+
+---
 
 ## Ejecutar
 
-El programa requiere recibir la posición inicial del cabezal como argumento.
+El programa recibe la posición inicial del cabezal como parámetro.
 
 ### Linux / Mac
 
@@ -290,25 +300,41 @@ El programa requiere recibir la posición inicial del cabezal como argumento.
 parte2.exe 2500
 ```
 
-### Ejemplo de salida
+---
+
+## Salida esperada
 
 ```text
 Initial head position: 2500
 FCFS total movement: ...
 SCAN total movement: ...
 C-SCAN total movement: ...
+
+Results exported to results.csv
 ```
+
+Después de ejecutarse, se generará automáticamente:
+
+```text
+results.csv
+```
+
+Este archivo contiene los datos utilizados posteriormente por el programa en Python para generar las gráficas.
 
 ---
 
-# Ejecutar visualizacion.py
+# 2. Ejecutar visualizacion.py
 
-Este programa implementa nuevamente los algoritmos FCFS, SCAN y C-SCAN, pero además genera gráficas para visualizar:
+Este programa:
 
-- El recorrido del cabezal.
-- Comparaciones de rendimiento entre algoritmos.
+- Lee los datos almacenados en `results.csv`.
+- Genera gráficas del movimiento del cabezal.
+- Compara visualmente el rendimiento de:
+  - FCFS
+  - SCAN
+  - C-SCAN
 
-Utiliza la librería `matplotlib` para mostrar las gráficas.
+---
 
 ## Ejecutar
 
@@ -326,30 +352,58 @@ python visualizacion.py
 
 ---
 
-# Explicación General
+# Gráficas generadas
 
-## parte2,2.cpp
+El programa mostrará:
 
-- Genera 1000 solicitudes aleatorias de cilindros.
-- Implementa:
-  - FCFS
-  - SCAN
-  - C-SCAN
-- Calcula el movimiento total del cabezal.
-- Recibe la posición inicial del disco como parámetro.
+- Gráfica del recorrido del cabezal para FCFS.
+- Gráfica del recorrido del cabezal para SCAN.
+- Gráfica del recorrido del cabezal para C-SCAN.
+- Comparación del movimiento total entre algoritmos.
 
 ---
 
-## visualizacion.py
+# Orden correcto de ejecución
 
-- Implementa los algoritmos:
-  - FCFS
-  - SCAN
-  - C-SCAN
-- Calcula el movimiento total del cabezal.
-- Genera gráficas del recorrido del disco.
-- Muestra una comparación visual entre algoritmos.
+## Paso 1
+
+Compilar el programa:
+
+```bash
+g++ parte2.cpp -o parte2
+```
 
 ---
 
+## Paso 2
 
+Ejecutar el programa C++:
+
+```bash
+./parte2 2500
+```
+
+o en Windows:
+
+```bash
+parte2.exe 2500
+```
+
+---
+
+## Paso 3
+
+Ejecutar el programa Python:
+
+```bash
+python visualizacion.py
+```
+
+---
+
+# Recomendaciones
+
+- Ejecutar primero el archivo en C++ para generar `results.csv`.
+- No eliminar el archivo `results.csv` antes de ejecutar Python.
+- Verificar que `matplotlib` esté instalado correctamente.
+- Ejecutar ambos programas desde la carpeta `Parte2`.
