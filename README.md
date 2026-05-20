@@ -192,3 +192,164 @@ punto4.exe
 - Libera correctamente la memoria usando `delete[]`.
 
 ---
+
+---
+
+# Parte 2 - Algoritmos de Planificación de Disco
+
+La carpeta `Parte2` contiene programas relacionados con algoritmos de planificación de disco y visualización de resultados.
+
+## Estructura de la carpeta
+
+```text
+Parte2/
+│
+├── parte2,2.cpp
+└── visualizacion.py
+```
+
+---
+
+# Requisitos
+
+## Para el programa en C++
+
+Instalar:
+
+- g++
+- Compilador compatible con C++11 o superior
+
+Verificar instalación:
+
+```bash
+g++ --version
+```
+
+---
+
+## Para el programa en Python
+
+Instalar:
+
+- Python 3
+- matplotlib
+
+Verificar Python:
+
+```bash
+python --version
+```
+
+Instalar matplotlib:
+
+```bash
+pip install matplotlib
+```
+
+---
+
+# Cómo ejecutar los programas
+
+Primero ingresar a la carpeta `Parte2`:
+
+```bash
+cd Parte2
+```
+
+---
+
+# Ejecutar parte2,2.cpp
+
+Este programa implementa los algoritmos de planificación de disco:
+
+- FCFS
+- SCAN
+- C-SCAN
+
+Además, genera 1000 solicitudes aleatorias de cilindros y calcula el movimiento total del cabezal del disco para cada algoritmo. :contentReference[oaicite:0]{index=0}
+
+## Compilar
+
+```bash
+g++ "parte2,2.cpp" -o parte2
+```
+
+## Ejecutar
+
+El programa requiere recibir la posición inicial del cabezal como argumento.
+
+### Linux / Mac
+
+```bash
+./parte2 2500
+```
+
+### Windows
+
+```bash
+parte2.exe 2500
+```
+
+### Ejemplo de salida
+
+```text
+Initial head position: 2500
+FCFS total movement: ...
+SCAN total movement: ...
+C-SCAN total movement: ...
+```
+
+---
+
+# Ejecutar visualizacion.py
+
+Este programa implementa nuevamente los algoritmos FCFS, SCAN y C-SCAN, pero además genera gráficas para visualizar:
+
+- El recorrido del cabezal.
+- Comparaciones de rendimiento entre algoritmos.
+
+Utiliza la librería `matplotlib` para mostrar las gráficas. :contentReference[oaicite:1]{index=1}
+
+## Ejecutar
+
+### Linux / Mac
+
+```bash
+python3 visualizacion.py
+```
+
+### Windows
+
+```bash
+python visualizacion.py
+```
+
+---
+
+# Explicación General
+
+## parte2,2.cpp
+
+- Genera 1000 solicitudes aleatorias de cilindros.
+- Implementa:
+  - FCFS
+  - SCAN
+  - C-SCAN
+- Calcula el movimiento total del cabezal.
+- Recibe la posición inicial del disco como parámetro.
+
+---
+
+## visualizacion.py
+
+- Implementa los algoritmos:
+  - FCFS
+  - SCAN
+  - C-SCAN
+- Calcula el movimiento total del cabezal.
+- Genera gráficas del recorrido del disco.
+- Muestra una comparación visual entre algoritmos.
+
+---
+
+
